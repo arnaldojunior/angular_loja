@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="form">
+        <header class="form__title">Acesse Nosso Portal</header>
+
+        <label class="form__label" for="usuario">Usuário: </label>
+        <input class="form__input" [(ngModel)]="usuario" id="usuario" type="text">
+
+        <label class="form__label" for="senha">Senha: </label>
+        <input class="form__input" [(ngModel)]="senha" id="senha" type="password">
+
+        <button class="form__button" (click)="logar()">Entrar</button>
+
+        <p>{{mensagem}}</p>
+    </div>
+</div>
