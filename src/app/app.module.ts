@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { MosaicoComponent } from './mosaico/mosaico.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DetalheComponent } from './detalhe/detalhe.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MosaicoComponent,
-    LoginComponent
+    LoginComponent,
+    DetalheComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,

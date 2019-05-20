@@ -1,3 +1,6 @@
+.mosaico {
+    height: 100vh;
+}
 .mosaico__title {
     background-color: #FFA500;
     display: inline;

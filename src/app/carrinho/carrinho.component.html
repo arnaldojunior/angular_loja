@@ -1,0 +1,19 @@
+<div class="cart__container">
+  <section class="cart">
+    <ul *ngIf="carrinho.produtos.length > 0; else mensagemPadrao" class="cart_list">
+      <li *ngFor="let item of carrinho.produtos" class="cart_list__item">
+        <span class="list__item__name">{{item.nome}}</span>
+        <span class="list__item__value">R$ {{item.valor | number: '.2-2'}}</span>
+      </li>
+    </ul>
+    <ng-template #mensagemPadrao>
+      Adicione algum produto ao carrinho!
+    </ng-template>
+
+    <p class="cart__total">R$ {{carrinho.valorTotal | number : '.2-2'}}</p>
+  </section>
+  <section class="cart__actions">
+      <button class="button button--state-back" (click)="goBack()">Voltar</button>
+      <button class="button">Finalizar</button>
+  </section>
+</div>

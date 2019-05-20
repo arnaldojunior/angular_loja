@@ -5,20 +5,7 @@
       <img class="item__img" [src]='produto.img'>
       <p class="item__name">{{produto.nome}}</p>
       <p class="item__price">R$ {{produto.valor | number :'.2-2'}}</p>
-      <button class="item__button" (click)="addItem(produto.id)">ADD</button>
+      <button class="item__button" (click)="addItem(produto)">ADD</button>
     </div>
   </div>
-</section>
-<section class="cart">
-  <ul *ngIf="carrinho.produtos.length > 0; else mensagemPadrao" class="cart_list">
-    <li *ngFor="let item of carrinho.produtos" class="cart_list__item">
-      <span class="list__item__name">{{item.nome}}</span>
-      <span class="list__item__value">R$ {{item.valor | number: '.2-2'}}</span>
-    </li>
-  </ul>
-  <ng-template #mensagemPadrao>
-    Adicione algum produto ao carrinho!
-  </ng-template>
-
-  <p class="cart__total">R$ {{carrinho.valorTotal | number : '.2-2'}}</p>
 </section>

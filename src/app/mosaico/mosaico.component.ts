@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PRODUTOS } from '../mock-produtos';
 import { Produto } from '../produto';
-import { Carrinho } from '../carrinho';
+import { ProdutosService } from '../produtos.service';
 
 @Component({
   selector: 'app-mosaico',
@@ -10,21 +9,20 @@ import { Carrinho } from '../carrinho';
 })
 export class MosaicoComponent implements OnInit {
 
-  produtos;
-  carrinho: Carrinho = new Carrinho();
+  produtos: Produto[];
 
-  constructor() { }
+  constructor(private produtosService: ProdutosService) { }
 
   ngOnInit() {
-    this.produtos = PRODUTOS;
+    this.getProdutos();
   }
 
-  addItem(id: number): void {
-    console.log("produto: "+ id);
-    for (let produto of this.produtos) {
-      if (produto.id == id) {
-        this.carrinho.addItem(produto);
-      }
-    }
+  getProdutos(): void {
+    this.produtos = this.produtosService.buscarProdutos();
+  }
+
+  addItem(item: Produto): void {
+    console.log(item);
+    this.produtosService.addItem(item);
   }
 }

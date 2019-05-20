@@ -4,23 +4,39 @@
 }
 .form {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+    padding: 20px;
 }
 .form__title {
-    grid-column-start: 1;
-    grid-column-end: 3;
     justify-self: center;
-    font: 600 20px Arial;
+    font-size: 20px;
+    font-family: sans-serif;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
-
+.form__input {
+    width: 300px;
+    padding: 5px;
+    font: 500 18px Calibri;
+    border: none;
+    border-radius: 7px;
+    color: #888888;
+}
 .form__button {
     padding: 5px 10px;
-    background-color: crimson;
+    background-color: #ED2939;
     border: none;
     border-radius: 5px;
     color: white;
     font: 500 18px Arial;
+    width: 100px;
+    justify-self: center;
+}
+.form__message {
+    font: 500 18px Arial;
+    color: #ffcccc;
+    text-align: center;
 }
