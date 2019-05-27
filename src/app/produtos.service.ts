@@ -29,6 +29,11 @@ export class ProdutosService {
     return this.httpClient.get<Produto[]>(this.produtosUrl);
   }
 
+  getProduto(id: number): Observable<Produto> {
+    const url = `${this.produtosUrl}/${id}`;
+    return this.httpClient.get<Produto>(url);
+  }
+
   get categorias(): Observable<Categoria[]> {
     return this.httpClient.get<Categoria[]>(this.categoriasUrl);
   }
