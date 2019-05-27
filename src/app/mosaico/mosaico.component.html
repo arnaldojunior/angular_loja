@@ -1,5 +1,11 @@
 <section class="mosaico">
-  <header class="mosaico__title">Produtos</header>
+  <div class="mosaico__titlebar">
+      <header class="titlebar__title">Produtos</header>
+      <select class="titlebar__select">
+        <option value=""></option>
+        <option *ngFor="let cat of categorias">{{cat.nome}}</option>
+      </select>
+  </div>
   <div class="mosaico__grid">
     <div *ngFor="let produto of produtos" class="mosaico__item">
       <img class="item__img" [src]='produto.img'>
