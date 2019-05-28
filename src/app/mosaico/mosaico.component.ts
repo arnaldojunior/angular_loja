@@ -18,7 +18,8 @@ export class MosaicoComponent implements OnInit {
   }
 
   getProdutos(): void {
-    this.produtos = this.produtosService.buscarProdutos();
+    this.produtosService.buscarProdutos()
+      .subscribe(produtos => this.produtos = produtos);
   }
 
   addItem(item: Produto): void {
