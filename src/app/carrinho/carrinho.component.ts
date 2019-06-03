@@ -10,12 +10,13 @@ import { ProdutosService } from '../produtos.service';
 })
 export class CarrinhoComponent implements OnInit {
 
-  carrinho: Carrinho;
+  private carrinho: Carrinho;
 
   constructor(private location: Location, private produtosService: ProdutosService) { }
 
   ngOnInit() {
     this.getCarrinho();
+    this.carrinho.calcularValorTotal();
   }
 
   getCarrinho(): void {

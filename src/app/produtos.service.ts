@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Produto } from './produto';
-import { PRODUTOS } from './mock-produtos';
 import { Carrinho } from './carrinho';
-import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Categoria } from './categoria';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutosService {
 
-  carrinho: Carrinho = new Carrinho();
-  private produtosUrl = 'api/produtos';  // URL to web api
+  private carrinho: Carrinho = new Carrinho();
+  private produtosUrl = 'api/produtos';
+  private categoriasUrl = 'api/categorias';
 
   constructor(
     private httpClient: HttpClient
@@ -21,11 +22,23 @@ export class ProdutosService {
     return this.carrinho;
   }
 
-  buscarProdutos(): Observable<Produto[]> {
+  get produtos(): Observable<Produto[]> {
+    // Utiliza o método get do HttpClient para realizar uma requisição na URL especificada.
+    // HttpClient.get retorna no body da resposta um objeto JSON não tipado. Por isso, 
+    // usamos o <Produto[]>.
     return this.httpClient.get<Produto[]>(this.produtosUrl);
+  }
+
+  getProduto(id: number): Observable<Produto> {
+    const url = `${this.produtosUrl}/${id}`;
+    return this.httpClient.get<Produto>(url);
+  }
+
+  get categorias(): Observable<Categoria[]> {
+    return this.httpClient.get<Categoria[]>(this.categoriasUrl);
   }
 
   addItem(produto: Produto): void {
     this.carrinho.addItem(produto);
   }
- }
+}

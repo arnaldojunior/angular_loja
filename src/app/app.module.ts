@@ -27,6 +27,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpClientModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

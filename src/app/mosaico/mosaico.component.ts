@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produto';
 import { ProdutosService } from '../produtos.service';
+import { Categoria } from '../categoria';
 
 @Component({
   selector: 'app-mosaico',
@@ -10,16 +11,23 @@ import { ProdutosService } from '../produtos.service';
 export class MosaicoComponent implements OnInit {
 
   produtos: Produto[];
+  categorias: Categoria[];
 
   constructor(private produtosService: ProdutosService) { }
 
   ngOnInit() {
     this.getProdutos();
+    this.getCategorias();
   }
 
   getProdutos(): void {
-    this.produtosService.buscarProdutos()
+    this.produtosService.produtos
       .subscribe(produtos => this.produtos = produtos);
+  }
+
+  getCategorias(): void {
+    this.produtosService.categorias
+      .subscribe(categorias => this.categorias = categorias);
   }
 
   addItem(item: Produto): void {

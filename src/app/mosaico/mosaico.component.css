@@ -1,12 +1,24 @@
 .mosaico {
     height: 100vh;
 }
-.mosaico__title {
+.mosaico__titlebar {
+    display: flex;
+    justify-content: space-between;
+}
+.titlebar__title {
     background-color: #FFA500;
     display: inline;
     padding: 3px 10px;
     font: 500 20px Calibri;
     border-top-right-radius: 10px;
+}
+.titlebar__select {
+    font: 500 20px Calibri;
+    margin-right: 10%;
+}
+.titlebar__select option {
+    color: dimgray;
+    font-size: 18px;
 }
 .mosaico__grid {
     display: grid;
@@ -14,7 +26,7 @@
     grid-template-rows: auto auto;
     gap: 15px;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 .mosaico__item {
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -39,30 +51,4 @@
     height: 30px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.cart {
-    margin: 20px auto;
-    padding: 10px;
-    background-color: white;
-    width: 90%;
-    font: 500 18px Calibri;
-    display: flex;
-    flex-direction: column;
-    color: #888888;
-}
-.cart_list {
-    list-style: none;
-}
-.cart_list__item {
-    border-bottom: 1px solid #888888;
-    padding: 3px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.cart__total {
-    align-self: flex-end;
-    font: 500 30px Arial;
-    margin-top: 10px;
 }
