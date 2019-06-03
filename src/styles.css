@@ -3,3 +3,17 @@
     margin: 0;
     padding: 0;
 }
+
+.button {
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    font: 500 17px Arial;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.button--state-back {
+    background-color: #e00000;
+}

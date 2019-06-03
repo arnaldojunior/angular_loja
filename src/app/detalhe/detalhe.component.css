@@ -1,0 +1,29 @@
+.detalhe__container {
+    height: 100vh;
+}
+.detalhe {
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    background-color: white;
+    padding: 10px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20%;
+    justify-content: flex-start;
+}
+.detalhe__img {
+    grid-row: 1 / 4;
+}
+.detalhe__nome {
+    font: 500 20px Calibri;
+    color: #888888;
+}
+.detalhe__valor {
+    font: 600 24px Calibri;
+    color: darkgreen;
+}
+.button--state-back {
+    margin: 20px 0 0 4%;
+}

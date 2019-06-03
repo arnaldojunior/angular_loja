@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from '../produtos.service';
 import { Produto } from '../produto';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detalhe',
@@ -14,7 +15,9 @@ export class DetalheComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: ProdutosService
+    private router: Router,
+    private location: Location,
+    private service: ProdutosService,
   ) { }
 
   ngOnInit() {
@@ -25,5 +28,14 @@ export class DetalheComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.service.getProduto(id)
       .subscribe(produto => this.produto = produto);
+  }
+
+  addItem(): void {
+    this.service.addItem(this.produto);
+    this.router.navigate(['./carrinho']);
+  }
+
+  voltar(): void {
+    this.location.back();
   }
 }

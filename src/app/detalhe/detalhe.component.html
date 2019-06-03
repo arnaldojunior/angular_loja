@@ -1,4 +1,9 @@
-<p>
-  detalhe works!
-  {{produto.nome}}
-</p>
+<div class="detalhe__container">
+  <div class="detalhe">
+    <img class="detalhe__img" [src]="produto.img">
+    <p class="detalhe__nome">{{produto.nome}}</p>
+    <p class="detalhe__valor">R$ {{produto.valor | number :'.2-2'}}</p>
+    <button class="button" (click)="addItem()">Add</button>
+  </div>
+  <button class="button button--state-back" (click)="voltar()">Voltar</button>
+</div>
