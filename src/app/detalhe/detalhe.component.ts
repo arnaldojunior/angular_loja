@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from '../produtos.service';
 import { Produto } from '../produto';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detalhe',
@@ -12,11 +11,11 @@ import { Location } from '@angular/common';
 export class DetalheComponent implements OnInit {
 
   private produto: Produto = new Produto();
+  private quantidade = 1;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location,
     private service: ProdutosService,
   ) { }
 
@@ -31,11 +30,11 @@ export class DetalheComponent implements OnInit {
   }
 
   addItem(): void {
-    this.service.addItem(this.produto);
+    this.service.addItem(this.produto, this.quantidade);
     this.router.navigate(['./carrinho']);
   }
 
   voltar(): void {
-    this.location.back();
+    this.router.navigate(['./main']);
   }
 }

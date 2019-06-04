@@ -38,7 +38,7 @@ export class ProdutosService {
     return this.httpClient.get<Categoria[]>(this.categoriasUrl);
   }
 
-  addItem(produto: Produto): void {
-    this.carrinho.addItem(produto);
+  addItem(produto: Produto, quantidade: number): void {
+    this.carrinho.addItem(produto, quantidade);
   }
 }

@@ -3,6 +3,7 @@
     <img class="detalhe__img" [src]="produto.img">
     <p class="detalhe__nome">{{produto.nome}}</p>
     <p class="detalhe__valor">R$ {{produto.valor | number :'.2-2'}}</p>
+    <input class="detalhe__quant" type="number" [(ngModel)]="quantidade">
     <button class="button" (click)="addItem()">Add</button>
   </div>
   <button class="button button--state-back" (click)="voltar()">Voltar</button>

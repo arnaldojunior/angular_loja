@@ -29,9 +29,4 @@ export class MosaicoComponent implements OnInit {
     this.produtosService.categorias
       .subscribe(categorias => this.categorias = categorias);
   }
-
-  addItem(item: Produto): void {
-    console.log(item);
-    this.produtosService.addItem(item);
-  }
 }

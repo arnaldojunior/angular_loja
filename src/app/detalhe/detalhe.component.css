@@ -8,13 +8,13 @@
     padding: 10px;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: auto auto;
     grid-column-gap: 20%;
     justify-content: flex-start;
 }
 .detalhe__img {
-    grid-row: 1 / 4;
+    grid-row: 1 / 5;
 }
 .detalhe__nome {
     font: 500 20px Calibri;
@@ -23,6 +23,14 @@
 .detalhe__valor {
     font: 600 24px Calibri;
     color: darkgreen;
+}
+.detalhe__quant {
+    border: 1px solid gray;
+    font: 500 20px Calibri;
+    color: #888888;
+    width: 60px;
+    margin-bottom: 10px;
+    padding: 0 10px;
 }
 .button--state-back {
     margin: 20px 0 0 4%;
